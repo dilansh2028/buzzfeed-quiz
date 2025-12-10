@@ -18,7 +18,11 @@ public class Question {
             System.out.println("[" + choice + "]:" +
                     this.possibleAnswers[i].label);
         }
+
         int ans = sc.nextInt();
+        if(ans != 1 && ans != 2 && ans != 3 && ans != 4 ){
+            return ask(sc);
+        } 
         return possibleAnswers[ans - 1].cat;
     }
 

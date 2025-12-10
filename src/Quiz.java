@@ -17,7 +17,7 @@ public class Quiz {
                 q1.possibleAnswers[2] = new Answer("Watch a television show", uniqlo);
                 q1.possibleAnswers[3] = new Answer("Go shopping at the mall", balenciaga);
 
-                Question q2 = new Question("What is your dream sports car??");
+                Question q2 = new Question("What is your dream sports car?");
                 // Attach Answers to Questions
                 q2.possibleAnswers[0] = new Answer("I would want an Aston Martin", balenciaga);
                 q2.possibleAnswers[1] = new Answer("I would want a Porsche", polo);
@@ -55,7 +55,7 @@ public class Quiz {
                Question q7 = new Question("Which personality trait resonates with you most?");
                q7.possibleAnswers[0] = new Answer("I am Quiet", uniqlo);
                q7.possibleAnswers[1] = new Answer("I am Composed", polo);
-               q7.possibleAnswers[2] = new Answer("I am hardworking", nike);
+               q7.possibleAnswers[2] = new Answer("I am Hardworking", nike);
                q7.possibleAnswers[3] = new Answer("I am confident", balenciaga);
 
                Question q8 = new Question("What's your ideal job?");
@@ -85,7 +85,7 @@ public class Quiz {
                 Category[] cList = { nike, polo, uniqlo, balenciaga };
                 // these need to be in the same order or the points will be incorrect!
                 int index = getMostPopularCatIndex(cList);
-                System.out.println("If you were a board game, you would be " + cList[index].label + ". ");
+                System.out.println("If you were a clothing brand, you would be " + cList[index].label + ". ");
                 System.out.println(cList[index].description);
 
         }
