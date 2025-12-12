@@ -92,13 +92,14 @@ public class Quiz {
                         System.out.println("Unidentifiable input. Please enter '1' to play");
                         sc.next();
                         gameIntro();
+                        return;
                 }
                 int play = sc.nextInt();
                 if (play != 1) {
                         System.out.println("Unidentifiable input. Please enter '1' to play");
+                        sc.next();
                         gameIntro();
-                } else {
-                        play = sc.nextInt();
+                        return;
                 }
         }
 
