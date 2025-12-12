@@ -4,42 +4,39 @@ public class Quiz {
         static Scanner sc = new Scanner(System.in);
 
         public static void main(String[] args) throws Exception {
-                // Create Categories
+                // dilan created categories
                 Category nike = new Category("Nike","You are athletic and love to play many sports.");
                 Category polo = new Category("Ralph Lauren", "You are classy and elegant in everything you do.");
                 Category uniqlo = new Category("Uniqlo)","You are a very relaxed and simple person.");
                 Category balenciaga = new Category("Balenciaga", "You are very wealthy and like to show off.");
-                // Create Questions
+                
+                // dilan did question 1-5, ishaan did questions 6-9
+                
                 Question q1 = new Question("What is your favorite activity to do in your free time?");
-                // Attach Answers to Questions
                 q1.possibleAnswers[0] = new Answer("Play sports with your friends", nike);
                 q1.possibleAnswers[1] = new Answer("Read a book at the park", polo);
                 q1.possibleAnswers[2] = new Answer("Watch a television show", uniqlo);
                 q1.possibleAnswers[3] = new Answer("Go shopping at the mall", balenciaga);
 
                 Question q2 = new Question("What is your dream sports car?");
-                // Attach Answers to Questions
                 q2.possibleAnswers[0] = new Answer("I would want an Aston Martin", balenciaga);
                 q2.possibleAnswers[1] = new Answer("I would want a Porsche", polo);
                 q2.possibleAnswers[2] = new Answer("I would want a Ferrari", nike);
                 q2.possibleAnswers[3] = new Answer("I would want a Mercedes", uniqlo);
 
                 Question q3 = new Question("What is your favorite drink");
-                // Attach Answers to Questions
                 q3.possibleAnswers[0] = new Answer("I drink Coffee", uniqlo);
                 q3.possibleAnswers[1] = new Answer("I drink Matcha", polo);
                 q3.possibleAnswers[2] = new Answer("I drink Tea", balenciaga);
                 q3.possibleAnswers[3] = new Answer("I drink Gatorade", nike);
 
                 Question q4 = new Question("What is your favorite food?");
-                // Attach Answers to Questions
                 q4.possibleAnswers[0] = new Answer("My favorite food is Grilled Chicken", nike);
                 q4.possibleAnswers[1] = new Answer("My favorite food is Steak", balenciaga);
                 q4.possibleAnswers[2] = new Answer("My favorite food is Salad", polo);
                 q4.possibleAnswers[3] = new Answer("My favorite food is any type of Sandwich", uniqlo);
 
                 Question q5 = new Question("Which social media platform do you use the most?");
-                // Attach Answers to Questions
                 q5.possibleAnswers[0] = new Answer("I use Twitch", nike);
                 q5.possibleAnswers[1] = new Answer("I use Youtube", uniqlo);
                 q5.possibleAnswers[2] = new Answer("I use Instagram", polo);
@@ -50,7 +47,6 @@ public class Quiz {
                q6.possibleAnswers[1] = new Answer("I watch Golf", polo);
                q6.possibleAnswers[2] = new Answer("I watch Soccer", uniqlo);
                q6.possibleAnswers[3] = new Answer("I watch Formula 1", balenciaga);
-
 
                Question q7 = new Question("Which personality trait resonates with you most?");
                q7.possibleAnswers[0] = new Answer("I am Quiet", uniqlo);
@@ -73,17 +69,14 @@ public class Quiz {
 
                 
 
-                // For each question, ask, read input, store answer.
+                // ishaan edited this
                 gameIntro();
                 Question[] qList = { q1, q2, q3, q4, q5, q6, q7, q8, q9 };
                 for (Question q : qList) {
                         Category c = q.ask(sc);
                         c.points++;
                 }
-                // Get most common category from the questions asked
-                // Return Category
                 Category[] cList = { nike, polo, uniqlo, balenciaga };
-                // these need to be in the same order or the points will be incorrect!
                 int index = getMostPopularCatIndex(cList);
                 System.out.println("If you were a clothing brand, you would be " + cList[index].label + ". ");
                 System.out.println(cList[index].description);
@@ -91,13 +84,21 @@ public class Quiz {
         }
 
         public static void gameIntro() {
-                // requires 1 to keep going
+                // dilan edited this
                 System.out.println("Which Clothing Brand Are You? Play to Find Out!");
                 System.out.println("You get to choose numbers 1-4 for every question. Enter '1' to begin!");
+                
+                if(sc.hasNextInt() == false){
+                        System.out.println("Unidentifiable input. Please enter '1' to play");
+                        sc.next();
+                        gameIntro();
+                }
                 int play = sc.nextInt();
                 if (play != 1) {
                         System.out.println("Unidentifiable input. Please enter '1' to play");
                         gameIntro();
+                } else {
+                        play = sc.nextInt();
                 }
         }
 
