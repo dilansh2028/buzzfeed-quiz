@@ -1,7 +1,10 @@
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Quiz {
         static Scanner sc = new Scanner(System.in);
+        static HashMap<String, String> data = new HashMap<>();
+        static String username = new String();
 
         public static void main(String[] args) throws Exception {
                 // dilan created categories
@@ -11,6 +14,9 @@ public class Quiz {
                 Category balenciaga = new Category("Balenciaga", "You are very wealthy and like to show off.");
                 
                 // dilan did question 1-5, ishaan did questions 6-9
+
+                System.out.println("What is your username: ");
+                username = sc.nextLine();
                 
                 Question q1 = new Question("What is your favorite activity to do in your free time?");
                 q1.possibleAnswers[0] = new Answer("Play sports with your friends", nike);
@@ -80,6 +86,8 @@ public class Quiz {
                 int index = getMostPopularCatIndex(cList);
                 System.out.println("If you were a clothing brand, you would be " + cList[index].label + ". ");
                 System.out.println(cList[index].description);
+                data.put(username, cList[index].label);
+                System.out.print(data);
 
         }
 
