@@ -3,10 +3,11 @@ import java.util.Scanner;
 
 public class Quiz {
         static Scanner sc = new Scanner(System.in);
-        static HashMap<String, String> data = new HashMap<>();
+        static FileSave fs;
         static String username = new String();
 
         public static void main(String[] args) throws Exception {
+                fs = new FileSave();
                 // dilan created categories
                 Category nike = new Category("Nike","You are athletic and love to play many sports.");
                 Category polo = new Category("Ralph Lauren", "You are classy and elegant in everything you do.");
@@ -86,8 +87,7 @@ public class Quiz {
                 int index = getMostPopularCatIndex(cList);
                 System.out.println("If you were a clothing brand, you would be " + cList[index].label + ". ");
                 System.out.println(cList[index].description);
-                data.put(username, cList[index].label);
-                System.out.print(data);
+                fs.updateResult(username, cList[index].label);
 
         }
 
