@@ -8,10 +8,13 @@ public class Quiz {
 
         public static void main(String[] args) throws Exception {
                 fs = new FileSave();
+                HashMap<String, String> results = fs.getResults();
+                HashMap<String, Integer> cats = new HashMap<>();
+
                 // dilan created categories
                 Category nike = new Category("Nike","You are athletic and love to play many sports.");
                 Category polo = new Category("Ralph Lauren", "You are classy and elegant in everything you do.");
-                Category uniqlo = new Category("Uniqlo)","You are a very relaxed and simple person.");
+                Category uniqlo = new Category("Uniqlo","You are a very relaxed and simple person.");
                 Category balenciaga = new Category("Balenciaga", "You are very wealthy and like to show off.");
                 
                 // dilan did question 1-5, ishaan did questions 6-9
@@ -88,6 +91,17 @@ public class Quiz {
                 System.out.println("If you were a clothing brand, you would be " + cList[index].label + ". ");
                 System.out.println(cList[index].description);
                 fs.updateResult(username, cList[index].label);
+
+                for(String cat : results.values()) {
+                        if(cats.containsKey(cat)) {
+                                cats.put(cat, cats.get(cat) +1);
+                        } else{
+                                cats.put(cat,1);
+                        }
+
+                }
+
+                System.out.print("Total number of people in each category: " + cats);
 
         }
 
