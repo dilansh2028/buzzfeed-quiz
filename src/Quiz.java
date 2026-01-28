@@ -101,7 +101,12 @@ public class Quiz {
 
                 }
 
-                System.out.print("Total number of people in each category: " + cats);
+                System.out.println("Total number of people in each category: ");
+                
+                for(String cat : cats.keySet()){
+                        System.out.println(cat + ", " + cats.get(cat));
+                }
+
 
         }
 
